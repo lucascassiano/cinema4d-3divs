@@ -5,13 +5,13 @@ import os
 
 template = """/*code generated using Cinema4D_3divs.py*/
 import React, { Component } from "react";
-import {SimpleViewer, div3D} from "react_3divs";
+import {Viewer3d, Div3d} from "react-3divs";
 //import planes from "./$component_name$.json";
 
 class $component_name$ extends Component {
     render(){
-        <SimpleViewer>$code$               
-        </SimpleViewer>
+        <Viewer3d>$code$               
+        </Viewer3d>
     }
 }
 
@@ -85,7 +85,7 @@ def main():
                 pos = plane.GetAbsPos()
                 rot = plane.GetAbsRot()
                 _tab = "\n\t\t\t\t\t"
-                jsxCode = jsxCode + '\n\t\t\t<div3d name="' + name +'" '
+                jsxCode = jsxCode + '\n\t\t\t<Div3d name="' + name +'" '
                 jsxCode = jsxCode + _tab
                 jsxCode = jsxCode + 'width={'+str(width)+'} height={'+str(height)+'}'
                 jsxCode = jsxCode + _tab
@@ -98,7 +98,7 @@ def main():
                 tab = "\n\t\t\t\t"
                 
                 jsxCode = jsxCode + "\n"+ tab + "add your HTML/JSX code here \n"
-                jsxCode = jsxCode + "\n\t\t\t</div3d>"
+                jsxCode = jsxCode + "\n\t\t\t</Div3d>"
                 
             json_file.write(']}')
             
